@@ -3,6 +3,7 @@ import './App.css';
 import { Routes, Route, Link } from 'react-router-dom'
 import { Home } from './pages/Home'
 import { Subscriber } from './pages/Subscriber'
+import { RequireAuth } from './contexts/Auth/RequireAuth';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <hr />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/subscriber" element={<Subscriber />} />
+        <Route path="/subscriber" element={<RequireAuth><Subscriber /></RequireAuth>} />
       </Routes>
     </div>
   );
