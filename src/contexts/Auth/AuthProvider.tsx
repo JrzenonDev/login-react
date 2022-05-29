@@ -19,7 +19,8 @@ export const AuthProvider = ({children}: {children: JSX.Element}) => {
   }
 
   const signout = async () => {
-    const data = await api.signout
+    await api.signout()
+    setUser(null)
   }
 
   return(
